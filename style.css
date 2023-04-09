@@ -110,7 +110,7 @@ header .container {
 }
 
 .links a:hover {
-  color: #001C63;
+  color: #b48100;
   transform: scale(1.05);
 }
 
@@ -122,10 +122,12 @@ header .container {
   border-radius: 16px;
   text-transform: capitalize;
   transition: 0.3s;
+  transform: scale(1.05);
 }
 
 .btn:hover {
   background-color: #001344;
+  transition: 0.2s;
   transform: scale(1) !important;
 }
 
