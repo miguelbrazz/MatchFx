@@ -199,4 +199,10 @@ main {
         font-size: 0;
     }
 
+    .search {
+        padding: 0.5rem 10px;
+        font-size: 15px;
+    }
+    
+
 }
