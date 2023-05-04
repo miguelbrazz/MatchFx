@@ -160,27 +160,28 @@ main {
 }
 
 #tags {
-    width: 50%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
     align-items: center;
     margin: 10px auto;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-x: hidden;
 }
 
 .tag {
     color: #ffffffb0;
-    padding: 10px 20px;
+    padding: 10px 15px;
     background-color: var(--secondary-color);
-    border-radius: 50px;
-    margin: 5px;
+    border-radius: 5px;
+    margin: 0.12em;
     display: inline-block;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .tag:hover {
-    transform: scale(1.01);
     background-color: #D6A62D;
 }
 
