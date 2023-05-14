@@ -160,15 +160,16 @@ main {
 }
 
 #tags {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
+    max-height: 100px;
     justify-content:center;
     align-items: center;
-    margin: 10px auto;
+    margin: 20px auto;
     text-align: center;
-    overflow-x: scroll;
-    overflow-x: hidden;
+    overflow-x: auto;
+}
+
+#tags::-webkit-scrollbar {
+    width: 0;
 }
 
 .tag {
