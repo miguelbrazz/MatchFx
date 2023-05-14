@@ -202,7 +202,8 @@ main {
 
     .search {
         padding: 0.5rem 10px;
-        font-size: 15px;
+        font-size: 12px;
+        margin-right: 50px;
     }
     
 
