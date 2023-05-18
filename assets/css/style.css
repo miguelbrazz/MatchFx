@@ -197,6 +197,10 @@ header .container {
   line-height: 1.4;
 }
 
+span {
+  color: #e7b128;
+}
+
 .text {
   color: var(--lightOne);
   font-size: 1.1rem;
