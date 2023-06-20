@@ -13,6 +13,7 @@ body {
     background-color: var(--primary-color);
     font-family: "Poppins", sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 header {
@@ -31,10 +32,12 @@ header {
 .logo img {
     margin-left: 1.5rem;
     width: 50px;
+    transition: 0.3s;
 }
 
 .logo img:hover {
-    transform: scale(1.0);
+    transform: scale(1.08);
+    transition: 0.3s;
 }
 
 .logo a {
@@ -45,11 +48,6 @@ header {
     display: inline-block;
     transition: 0.3s;
     text-decoration: none;
-}
-
-.logo a:hover {
-    color: #b48100;
-    transform: scale(1.05);
 }
 
 .logo p {
@@ -69,16 +67,19 @@ header {
     font-size: 1rem;
     color: #D6A62D;
     font-family: inherit;
+    transition: 0.4s;
 }
 
 .search:focus {
     outline: 0;
     background-color: var(--primary-color);
+    transition: 0.4s;
 }
 
 .search::placeholder {
     color: #D6A62D;
     opacity: calc(80%);
+    transition: 0.4s;
 }
 
 .search:hover {
@@ -96,7 +97,7 @@ main {
     margin: 0.8rem;
     margin-top: 1.5rem;
     border-radius: 3px;
-    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.13);
     background-color: var(--secondary-color);
     position: relative;
     overflow: hidden;
@@ -181,10 +182,12 @@ main {
     margin: 0.12em;
     display: inline-block;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .tag:hover {
     background-color: #D6A62D;
+    transition: 0.3s;
 }
 
 .tag.highlight {
