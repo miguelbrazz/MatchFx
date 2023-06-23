@@ -187,21 +187,31 @@ function openNav(movie) {
             document.getElementById("myNav").style.width = "100%";
             if(videoData.results.length > 0) {
                 var embed = [];
-                videoData.results.forEach(video => {
+                var dots = [];
+                videoData.results.forEach((video, idx) => {
                     let {name, key, site} = video
 
-                    if(site == 'Youtube') {
+                    if(site == 'YouTube') {
 
                         embed.push(`
-                        <iframe width="560" height="315" src="https://www.youtube
-                        .com/embed/${key}" title="${name}" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; 
-                        encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
-                    `)
+                        <iframe width="360" height="205" src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        `)
                     }
                 })
-                overlayContent.innerHTML = embed.join('');
+
+                var content = `
+                <h1 class="no-results">${movie.original_title}</h1>
+                <br/>
+                
+                ${embed.join('')}
+                <br/>
+
+                <div class="dots">${dots.join('')}</div>
+                `
+
+                overlayContent.innerHTML = content;
+                activeSlide = 0;
+                showVideos();
             }
             else {
                 overlayContent.innerHTML = `<h1 class="no-results">No Results Found</
@@ -215,6 +225,47 @@ function openNav(movie) {
   function closeNav() {
     document.getElementById("myNav").style.width = "0%";
   }
+
+  var activeSlide = 0;
+  var totalVideos = 0;
+
+  function showVideos() {
+    let embedClasses = document.querySelectorAll('.embed');
+    totalVideos = embedClasses.length;
+    embedClasses.forEach((embedTag, idx) => {
+        if(activeSlide == idx) {
+            embedTag.classList.add('show')
+            embedTag.classList.remove('hide')
+        
+        } else {
+            embedTag.classList.add('hide')
+            embedTag.classList.remove('show')
+        }
+    })
+  }
+
+  const leftArrow = document.getElementById('left-arrow')
+  const rightArrow = document.getElementById('right-arrow')
+
+  leftArrow.addEventListener('click',() => {
+    if(activeSlide > 0) {
+        activeSlide --;
+    } else {
+        activeSlide = totalVideos -1;
+    }
+
+    showVideos()
+  })
+
+  rightArrow.addEventListener('click',() => {
+    if(activeSlide < (totalVideos -1)) {
+        activeSlide ++;
+    } else {
+        activeSlide = 0;
+    }
+    showVideos()
+  })
+
 
 function getColor(vote) {
     if(vote>= 8) {

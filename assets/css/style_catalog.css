@@ -305,6 +305,30 @@ main {
         padding: 0.5rem 10px;
         font-size: 12px;
     }
-    
 
+    .no-results {
+        font-size: 14px;
+    }
+}
+
+.embed.hide {
+    display: none;
+}
+
+.embed.show {
+    display: inline-block;
+}
+
+.arrow {
+    position: absolute;
+}
+
+.arrow.left-arrow {
+    left: 2%;
+    margin: auto;
+}
+
+.arrow.right-arrow {
+    right: 2%;
+    margin: auto;
 }
